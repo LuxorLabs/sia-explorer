@@ -26,7 +26,7 @@ class Landing extends React.Component {
   render () {
     return (
       <div>
-        <div className='bg-dark'>
+        <div className='bg-dark-gradient'>
           <Nav className='container grid-xl text-light'>
             <header className='navbar'>
               <section className='navbar-section'>
@@ -47,11 +47,15 @@ class Landing extends React.Component {
               <HeaderText className='text-light'>
                 Begin your journey into the Sia Blockchain
               </HeaderText>
-              <SubHeaderText className='text-gray'>
+              <SubHeaderText className='text-light'>
                 this is a brand new explorer redesigned for simplicity
               </SubHeaderText>
-              <div className='col-6 col-md-9 col-mx-auto'>
-                <input className='form-input' type='text' />
+              <div className='col-5 col-md-9 col-mx-auto'>
+                <input
+                  placeholder='Search for address, block, txid...'
+                  className='form-input'
+                  type='text'
+                />
               </div>
             </div>
           </Hero>
@@ -60,8 +64,8 @@ class Landing extends React.Component {
         <Body className='container grid-xl'>
           <div className='columns'>
             <Card className='column col-md-6 col-sm-12'>
-              <h4>Latest Transactions</h4>
-              <table className='table table-striped'>
+              <CardHeader className='h4-caps'>Latest Transactions</CardHeader>
+              <AddressTable className='table table-striped'>
                 <tbody>
                   <tr>
                     <th>Hash</th>
@@ -76,10 +80,10 @@ class Landing extends React.Component {
                     <td>100 SC</td>
                   </tr>
                 </tbody>
-              </table>
+              </AddressTable>
             </Card>
             <Card className='column col-md-6 col-sm-12'>
-              <h4>659 Hosts is 50 Countries</h4>
+              <CardHeader>659 Hosts is 50 Countries</CardHeader>
               <MapWrap>
                 <GoogleMapReact
                   bootstrapURLKeys={{
@@ -111,6 +115,18 @@ class Landing extends React.Component {
     )
   }
 }
+
+const AddressTable = styled.table`
+  tr {
+    th:first-child {
+      width: 80%;
+    }
+  }
+`
+
+const CardHeader = styled.h6`
+  margin-bottom: 1rem;
+`
 
 const MapWrap = styled.div`
   height: 40vh;

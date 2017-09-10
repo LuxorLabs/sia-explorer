@@ -27,3 +27,8 @@
 @include bg-color-variant(".bg-warning", $warning-color);
 
 @include bg-color-variant(".bg-error", $error-color);
+
+
+.bg-dark-gradient {
+  background-image: radial-gradient(circle, #6B6B6B, #1A1A1A 80%);
+}
