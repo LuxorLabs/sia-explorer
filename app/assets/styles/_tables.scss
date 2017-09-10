@@ -4,6 +4,7 @@
   border-spacing: 0;
   text-align: left;
   width: 100%;
+  table-layout:fixed;
 
   &.table-striped {
     tbody {
@@ -38,6 +39,9 @@
   th {
     border-bottom: $border-width solid $border-color;
     padding: $unit-3 $unit-2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:nowrap;
   }
   th {
     border-bottom-width: $border-width-lg;
