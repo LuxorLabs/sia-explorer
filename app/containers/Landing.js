@@ -26,30 +26,37 @@ class Landing extends React.Component {
   render () {
     return (
       <div>
-        <Nav className='container grid-xl'>
-          <header className='navbar'>
-            <section className='navbar-section'>
-              <div><h6><small className='label'>$0.69 USD/TB</small></h6></div>
-            </section>
-            <section className='navbar-center'>Explorer</section>
-            <section className='navbar-section'>
-              <a href='#' className='btn btn-link'>API</a>
-              <a href='#' className='btn btn-link'>Map</a>
-              <a href='#' className='btn btn-link'>Network</a>
-            </section>
-          </header>
-        </Nav>
-        <Hero className='bg-secondary'>
-          <div className='container grid-xl text-center'>
-            <HeaderText>Begin Your Journey into the Sia Blockchain</HeaderText>
-            <SubHeaderText>
-              with a brand new explorer redesigned for simplicity
-            </SubHeaderText>
-            <div className='col-6 col-md-9 col-mx-auto'>
-              <input className='form-input' type='text' />
+        <div className='bg-secondary'>
+          <Nav className='container grid-xl'>
+            <header className='navbar'>
+              <section className='navbar-section'>
+                <div>
+                  <h6><small className='label'>$0.69 USD/TB</small></h6>
+                </div>
+              </section>
+              <section className='navbar-center'>Explorer</section>
+              <section className='navbar-section'>
+                <a href='#' className='btn btn-link'>API</a>
+                <a href='#' className='btn btn-link'>Map</a>
+                <a href='#' className='btn btn-link'>Network</a>
+              </section>
+            </header>
+          </Nav>
+          <Hero>
+            <div className='container grid-xl text-center'>
+              <HeaderText>
+                Begin Your Journey into the Sia Blockchain
+              </HeaderText>
+              <SubHeaderText>
+                with a brand new explorer redesigned for simplicity
+              </SubHeaderText>
+              <div className='col-6 col-md-9 col-mx-auto'>
+                <input className='form-input' type='text' />
+              </div>
             </div>
-          </div>
-        </Hero>
+          </Hero>
+        </div>
+
         <Body className='container grid-xl'>
           <div className='columns'>
             <Card className='column col-md-6 col-sm-12'>
@@ -115,22 +122,23 @@ const Card = styled.section`
 const Body = styled.div``
 
 const Hero = styled.div`
-padding: 150px 0;
-height: 50vh;
-display: flex;
-align-items: center;
-justify-content: center;
+  padding: 150px 0;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const Nav = styled.div`
-padding: 50px 0;
+  padding: 30px 0;
+  background: transparent;
 `
 
 const Footer = styled.div`
-padding: 50px 0;
-display: flex;
-align-items: center;
-justify-content: center;
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 export default Landing
