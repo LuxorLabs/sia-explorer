@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { inject, observer } from 'mobx-react'
 
 import GoogleMapReact from 'google-map-react'
@@ -9,7 +10,6 @@ import 'styles/spectre.scss'
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>
 
-console.log(mapStyle)
 const mapOptions = {
   styles: mapStyle,
   minZoomOverride: true,
@@ -31,7 +31,7 @@ class Landing extends React.Component {
             <header className='navbar'>
               <section className='navbar-section'>
                 <div>
-                  <h6><small className='label'>$0.69 USD/TB</small></h6>
+                  <h6><small>$0.69 USD/TB</small></h6>
                 </div>
               </section>
               <section className='navbar-center'>Explorer</section>
@@ -61,7 +61,7 @@ class Landing extends React.Component {
           </Hero>
         </div>
 
-        <Body className='container grid-xl'>
+        <div className='container grid-xl'>
           <div className='columns'>
             <Card className='column col-md-6 col-sm-12'>
               <CardHeader className='h4-caps'>Latest Transactions</CardHeader>
@@ -73,9 +73,9 @@ class Landing extends React.Component {
                   </tr>
                   <tr>
                     <td>
-                      <a href='#'>
+                      <Link to='/block/e55d94f425bed1a6a3f08c114ba64d1f5cff8e5887fdc6c57707380d17493094'>
                         e55d94f425bed1a6a3f08c114ba64d1f5cff8e5887fdc6c57707380d17493094
-                      </a>
+                      </Link>
                     </td>
                     <td>100 SC</td>
                   </tr>
@@ -83,7 +83,7 @@ class Landing extends React.Component {
               </AddressTable>
             </Card>
             <Card className='column col-md-6 col-sm-12'>
-              <CardHeader>659 Hosts is 50 Countries</CardHeader>
+              <CardHeader>659 Hosts in 50 Countries</CardHeader>
               <MapWrap>
                 <GoogleMapReact
                   bootstrapURLKeys={{
@@ -102,7 +102,7 @@ class Landing extends React.Component {
               </MapWrap>
             </Card>
           </div>
-        </Body>
+        </div>
         <Footer className='container grid-xl'>
           <div className='col-6 text-left'>
             Yunbi Sia Explorer
@@ -143,8 +143,6 @@ const SubHeaderText = styled.h5`
 const Card = styled.section`
   padding: 2rem;
 `
-
-const Body = styled.div``
 
 const Hero = styled.div`
   padding: 150px 0;
