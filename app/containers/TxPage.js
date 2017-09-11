@@ -35,8 +35,7 @@ class TxPage extends Component {
                 <CardTable className='table table-striped'>
                   <tbody>
                     <tr>
-                      <th>Summary</th>
-                      <th />
+                      <th colSpan='2'>Summary</th>
                     </tr>
                     <tr>
                       <td>Height</td>
@@ -69,8 +68,7 @@ class TxPage extends Component {
                 <AddressTable className='table table-striped'>
                   <tbody>
                     <tr>
-                      <th>Hashes</th>
-                      <th />
+                      <th colSpan='2'>Hashes</th>
                     </tr>
                     <tr>
                       <td>Block Hash</td>
@@ -103,12 +101,80 @@ class TxPage extends Component {
           </Card>
           <Card>
             <CardHeader>Transaction Summary</CardHeader>
+            <div className='column col-12'>
+              <TxTable className='table table-striped'>
+                <tbody>
+                  <tr>
+                    <td colSpan='3'>
+                      31fd0949097db70973201d79d783872c458c211cc35fb9b740872b90310a7b1c
+                    </td>
+                    <td>
+                      <span className='chip'>
+                        File Contract
+                      </span>
+                      <span className='chip'>
+                        Total Value: 10 SC
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan='2'>
+                      44207d74fb7c6ab55aba13929e7259287bd7282112d5c216cd10e7d5430cbb4d446155eaa0f9
+                      <br />
+                      4c357a07dcd57017ef368f1dd96185d345554bbaeeb5dc90cb6d48b1c0768ce555119cdd76d3
+                    </td>
+                    <td>
+                      2e584daf2976aa73476ff61b07b6b75f6874de854a38a6680cdc8fef787d3a3a
+                    </td>
+                    <td>
+                      10 SC
+                    </td>
+
+                  </tr>
+                  <tr>
+                    <td colSpan='3'>
+                      fb7a7c894003c1d2544bf3a2f3a7fdff67a2b10b2686b7a54c080a7d58cc54ac
+                    </td>
+                    <td>
+                      <span className='chip'>
+                        Transaction
+                      </span>
+                      <span className='chip'>
+                        Total Value: 30 SC
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colSpan='2'>
+                      efa6b8d7539cb58c5d884931f0da8aa07e181a85099c08e33aa7c7c04a4d87e76b20b96e9178
+                    </td>
+                    <td colSpan='1'>
+                      f7b878f69bde9aa1e22ef08635c48bb0e5a1915599d10d60ac2f8fa15efe52dc39a1d424ce5b
+                      <br />
+                      f59bf52310168a4ecba52db2aeb2ee689e8b9360d2d50db8877af674fc49cb8695835b397a7e
+                    </td>
+                    <td>
+                      10 SC<br />
+                      20 SC
+
+                    </td>
+                  </tr>
+                </tbody>
+              </TxTable>
+            </div>
           </Card>
         </div>
       </div>
     )
   }
 }
+
+const TxTable = styled.table`
+  td:last-child {
+    text-align: right;
+  }
+  
+`
 
 const AddressTable = styled.table`
 tr {
