@@ -5,6 +5,7 @@ import { inject, observer } from 'mobx-react'
 
 import GoogleMapReact from 'google-map-react'
 import mapStyle from '../lib/mapStyle'
+import SearchBar from 'components/SearchBar'
 
 import 'styles/spectre.scss'
 import 'styles/spectre-icons.scss'
@@ -51,14 +52,8 @@ class Landing extends React.Component {
               <SubHeaderText className='text-light'>
                 this is a brand new explorer redesigned for simplicity
               </SubHeaderText>
-              <div className='col-5 col-md-9 col-mx-auto has-icon-right'>
-                <input
-                  placeholder='Search for address, block, txid...'
-                  className='form-input'
-                  type='text'
-                />
-                <i className='form-icon icon icon-search' />
-
+              <div className='col-5 col-md-9 col-mx-auto'>
+                <SearchBar />
               </div>
             </div>
           </Hero>
