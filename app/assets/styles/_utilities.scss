@@ -6,3 +6,9 @@
 @import "utilities/position";
 @import "utilities/shapes";
 @import "utilities/text";
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

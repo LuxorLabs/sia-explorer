@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { inject, observer } from 'mobx-react'
 import { Link } from 'react-router-dom'
+import { ArrowRight, Activity } from 'react-feather'
 
 @inject('mainStore')
 @observer
@@ -21,13 +22,110 @@ class TxPage extends Component {
                 <a href='#' className='btn btn-link'>Network</a>
               </section>
               <section className='navbar-section'>
-                <input className='form-input' />
+                <input
+                  placeholder='Search for address, block, txid...'
+                  className='form-input'
+                  type='text'
+                />
               </section>
 
             </header>
           </Nav>
         </div>
         <div className='container grid-xl'>
+          <Card>
+            <CardHeader>Siacoin Address</CardHeader>
+            <div className='columns'>
+              <div className='column col-12'>
+                <div className='card  text-center'>
+                  <div className='card-header'>
+                    <div className='card-subtitle text-gray'>
+                      Last seen today
+                    </div>
+                    <div className='card-title h5'>
+                      31fd0949097db70973201d79d783872c458c211cc35fb9b740872b90310a7b1c
+                    </div>
+                    <div className='columns mt-2'>
+                      <div className='column col-4 col-md-12'>
+                        <div className='h6 text-gray'>Total Sent</div>
+                        <div className='h4'>5000 SC</div>
+                      </div>
+                      <div className='column col-4 col-md-12'>
+                        <div className='h6 text-gray'>Total Received</div>
+                        <div className='h4'>5000 SC</div>
+                      </div>
+                      <div className='column col-4 col-md-12'>
+                        <div className='h6 text-gray'>Total Balance</div>
+                        <div className='h4'>0 SC</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+          <Card>
+            <CardHeader>Siacoin Transaction</CardHeader>
+            <div className='columns'>
+              <div className='column col-12'>
+                <div className='card  text-center'>
+                  <div className='card-header'>
+                    <div className='card-subtitle text-gray'>
+                      Received 2 hours ago
+                    </div>
+                    <div className='card-title h5'>
+                      02685d2e02e963de09606793e38c7fe718c880b77315678875b44f30d9c6c6ee
+                    </div>
+                    <div className='columns mt-2'>
+                      <div className='column col-4 col-md-12'>
+                        <div className='h6 text-gray'>Amount Transacted</div>
+                        <div className='h4'>5000 SC</div>
+                      </div>
+                      <div className='column col-4 col-md-12'>
+                        <div className='h6 text-gray'>Fees Collected</div>
+                        <div className='h4'>1 SC</div>
+                      </div>
+                      <div className='column col-4 col-md-12'>
+                        <div className='h6 text-gray'>Confirmations</div>
+                        <div className='h4'>5+</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+          <Card>
+            <CardHeader>Storage Contract</CardHeader>
+            <div className='columns'>
+              <div className='column col-12'>
+                <div className='card  text-center'>
+                  <div className='card-header'>
+                    <div className='card-subtitle text-gray'>
+                      Received 5 hours ago
+                    </div>
+                    <div className='card-title h5'>
+                      54e4d81ea52dcd404353ce96cb5b1a2d7d9ccae18a97adbc4bc91dd8a4fd3e02
+                    </div>
+                    <div className='columns mt-2'>
+                      <div className='column col-4 col-md-12'>
+                        <div className='h6 text-gray'>File Size</div>
+                        <div className='h4'>0 bytes</div>
+                      </div>
+                      <div className='column col-4 col-md-12'>
+                        <div className='h6 text-gray'>Payout</div>
+                        <div className='h4'>28 SC</div>
+                      </div>
+                      <div className='column col-4 col-md-12'>
+                        <div className='h6 text-gray'>Revision</div>
+                        <div className='h4'>0</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
           <Card>
             <CardHeader>Block Height: 1108</CardHeader>
             <div className='columns'>
@@ -60,6 +158,10 @@ class TxPage extends Component {
                     <tr>
                       <td>Estimated Hashrate</td>
                       <td>239 850 TH</td>
+                    </tr>
+                    <tr>
+                      <td>Successful Storage Proofs</td>
+                      <td>85 500</td>
                     </tr>
                   </tbody>
                 </CardTable>
@@ -99,68 +201,58 @@ class TxPage extends Component {
               </div>
             </div>
           </Card>
-          <Card>
+          <Card className='columns'>
             <CardHeader>Transaction Summary</CardHeader>
             <div className='column col-12'>
-              <TxTable className='table table-striped'>
-                <tbody>
-                  <tr>
-                    <td colSpan='3'>
-                      31fd0949097db70973201d79d783872c458c211cc35fb9b740872b90310a7b1c
-                    </td>
-                    <td>
-                      <span className='chip'>
-                        File Contract
-                      </span>
-                      <span className='chip'>
-                        Total Value: 10 SC
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colSpan='2'>
-                      44207d74fb7c6ab55aba13929e7259287bd7282112d5c216cd10e7d5430cbb4d446155eaa0f9
-                      <br />
-                      4c357a07dcd57017ef368f1dd96185d345554bbaeeb5dc90cb6d48b1c0768ce555119cdd76d3
-                    </td>
-                    <td>
-                      2e584daf2976aa73476ff61b07b6b75f6874de854a38a6680cdc8fef787d3a3a
-                    </td>
-                    <td>
-                      10 SC
-                    </td>
-
-                  </tr>
-                  <tr>
-                    <td colSpan='3'>
-                      fb7a7c894003c1d2544bf3a2f3a7fdff67a2b10b2686b7a54c080a7d58cc54ac
-                    </td>
-                    <td>
-                      <span className='chip'>
-                        Transaction
-                      </span>
-                      <span className='chip'>
-                        Total Value: 30 SC
-                      </span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colSpan='2'>
-                      efa6b8d7539cb58c5d884931f0da8aa07e181a85099c08e33aa7c7c04a4d87e76b20b96e9178
-                    </td>
-                    <td colSpan='1'>
-                      f7b878f69bde9aa1e22ef08635c48bb0e5a1915599d10d60ac2f8fa15efe52dc39a1d424ce5b
-                      <br />
-                      f59bf52310168a4ecba52db2aeb2ee689e8b9360d2d50db8877af674fc49cb8695835b397a7e
-                    </td>
-                    <td>
-                      10 SC<br />
-                      20 SC
-
-                    </td>
-                  </tr>
-                </tbody>
-              </TxTable>
+              <div className='card'>
+                <div className='card-header'>
+                  <div className='card-title h5'>
+                    31fd0949097db70973201d79d783872c458c211cc35fb9b740872b90310a7b1c
+                  </div>
+                  <div className='card-subtitle text-gray'>
+                    Storage Contract
+                  </div>
+                </div>
+                <div className='card-body'>
+                  <div className='columns'>
+                    <div className='column col-5'>
+                      <div className='card mt-2'>
+                        <div className='card-body'>
+                          <span className='text-gray'>
+                            5 SC from{' '}
+                          </span>
+                          44207d74fb7c6ab55aba13929e7259287bd7282112d5c216cd10e7d5430cbb4d446155eaa0f9
+                        </div>
+                      </div>
+                      <div className='card mt-2'>
+                        <div className='card-body'>
+                          <span className='text-gray'>
+                            5 SC from{' '}
+                          </span>
+                          <span>
+                            4c357a07dcd57017ef368f1dd96185d345554bbaeeb5dc90cb6d48b1c0768ce555119cdd76d3
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className='column col-2 flex-center'>
+                      <ArrowRight />
+                    </div>
+                    <div className='column col-5'>
+                      <div className='card mt-2'>
+                        <div className='card-body'>
+                          <span className='text-gray'>
+                            10 SC to{' '}
+                          </span>
+                          <span>
+                            4c357a07dcd57017ef368f1dd96185d345554bbaeeb5dc90cb6d48b1c0768ce555119cdd76d3
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </Card>
         </div>
@@ -173,7 +265,7 @@ const TxTable = styled.table`
   td:last-child {
     text-align: right;
   }
-  
+
 `
 
 const AddressTable = styled.table`

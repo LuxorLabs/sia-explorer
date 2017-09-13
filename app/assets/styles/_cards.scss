@@ -5,7 +5,14 @@
   border-radius: $border-radius;
   display: flex;
   flex-direction: column;
-
+  .card-title,
+  .card-header,
+  .card-body,
+  .card-footer {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
   .card-header,
   .card-body,
   .card-footer {
